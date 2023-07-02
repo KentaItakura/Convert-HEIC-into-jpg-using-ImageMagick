@@ -123,7 +123,6 @@ ans = 0
 ```
 
 ```matlab
-
 cd(curPath)
 ```
 
@@ -142,9 +141,38 @@ end
 
 <p style="text-align:left"><img src="README_media/image_5.png" width="336" alt="image_5.png"></p>
 
+# 補足: Pythonを利用した場合
+
+簡単にPythonでも同様の処理を書いてみました。jupyter notebook形式でgithubにアップロードしています。
+
+```matlab
+import glob
+heicImg = glob.glob(r"D:\blog\2023\20230702_ImageMagick\sample\*.HEIC")
+print(heicImg)
+
+print('=====start heic2jpg=====')
+for heicName in heicImg:
+    # print(heicName)
+    input = heicName
+    dirname = os.path.dirname(input)
+    basename_without_ext = os.path.splitext(os.path.basename(input))[0]
+    output = os.path.join(dirname,basename_without_ext+".jpg")
+    print('=====')
+    print("input: "+input)
+    print("output: "+output)
+    print('=====Run ImageMagick=====')
+    print('Command')
+    print(os.path.join(imageMagickPath,"magick convert")+input+ " " + output)
+    subprocess.run(os.path.join(imageMagickPath,"magick convert")+input+ " " + output)
+
+print('=====finished=====')
+```
 # まとめ
 
 この記事では、ImageMagickを利用して、HEIC形式で保存された画像をjpg形式に変換しました。
+
+
+また、本記事のためのスクリプトはMATLABのライブスクリプトで作成され、以下のコマンドにてマークダウン形式に変換しました。この変換は MATLAB 2023bプレスリリースを利用しています。
 
 
 `export("README.mlx","README.md","EmbedImage",false)`
