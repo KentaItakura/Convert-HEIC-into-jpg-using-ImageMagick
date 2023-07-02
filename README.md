@@ -83,6 +83,12 @@ magick convert というコマンドで、HEIC形式をjpg形式に変換する�
 以下のMATLABのコマンドの3行目で、HEICファイルが格納されているパスを指定して下さい。
 
 
+今回利用したコードやサンプル画像は以下のページにアップロードされています。ぜひお使いください。
+
+
+https://github.com/KentaItakura/Convert-HEIC-into-jpg-using-ImageMagick
+
+
 今回の例では、以下のsampleというフォルダにHEIC形式の画像が3つ保存されています。
 
 <p style="text-align:left"><img src="README_media/image_4.png" width="437" alt="image_4.png"></p>
